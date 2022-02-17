@@ -284,7 +284,7 @@ async def play(_, message: Message):
                         InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/V3n0m_0p"),
                       InlineKeyboardButton("• Group", url=f"https://t.me/v3nom_support"),
                   ],[
-                      InlineKeyboardButton("OWNER", url=f"https://t.me/VENOMxCRAZY")],
+                      InlineKeyboardButton("OWNER", url=f"https://t.me/VENOMxCRAZY")
 
                 ]
             ]
