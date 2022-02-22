@@ -335,7 +335,8 @@ async def play(_, message: Message):
 @authorized_users_only
 async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
-    await lel.edit(" 𝙆𝙍𝘿𝙄𝙔𝘼 𝙋𝘼𝙐𝙎𝙀...**")
+    await message.reply_photo( 
+                            caption="**💥 paused...**")
 
 
 @Client.on_message(commandpro(["/resume", "resume"]) & other_filters)
