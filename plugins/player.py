@@ -335,10 +335,7 @@ async def play(_, message: Message):
 @authorized_users_only
 async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
-    await message.reply_photo(
-                             photo="https://telegra.ph/file/55d8a6f1a9b87eaba142f.png", 
-                             caption="**💥 𝙆𝙍𝘿𝙄𝙔𝘼 𝙋𝘼𝙐𝙎𝙀...**"
-    )
+    await lel.edit(" 𝙆𝙍𝘿𝙄𝙔𝘼 𝙋𝘼𝙐𝙎𝙀...**")
 
 
 @Client.on_message(commandpro(["/resume", "resume"]) & other_filters)
