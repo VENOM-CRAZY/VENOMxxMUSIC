@@ -18,11 +18,11 @@
             "description": "Put Bot Token Of Your Bot",
             "required": true
         },
-        "GROUP_SUPPORT": {
+        "SUPPORT_GROUP": {
           "description": "PUT UR GROUP LINK HERE WITHOU @",
           "required": true
         },
-        "CHANNEL_SUPPORT": {
+        "SUPPORT_CHANNEL": {
           "description": "PUT UR CHANNEL LINK HERE WITHOU @",
           "required": true
         },
