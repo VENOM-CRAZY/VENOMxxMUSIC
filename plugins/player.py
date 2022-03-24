@@ -18,7 +18,7 @@ from modules.helpers.admins import get_administrators
 from youtube_search import YoutubeSearch
 from modules import converter
 from modules.downloaders import youtube
-from modules.config import DURATION_LIMIT, que, SUDO_USERS, OWNER_USERNAME, GROUP_SUPPORT, CHANNEL_SUPPORT, BOT_NAME
+from modules.config import DURATION_LIMIT, que, SUDO_USERS, OWNER_USERNAME, SUPPORT_GROUP, SUPPORT_CHANNEL, BOT_NAME
 from modules.cache.admins import admins as a
 from modules.helpers.filters import command, other_filters
 from modules.helpers.command import commandpro
