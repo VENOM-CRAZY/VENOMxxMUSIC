@@ -281,7 +281,7 @@ async def play(_, message: Message):
             print(str(e))
             return
 
-        keyboard = IInlineKeyboardMarkup(
+        keyboard = InlineKeyboardMarkup(
             [
                 [
                         InlineKeyboardButton("𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
