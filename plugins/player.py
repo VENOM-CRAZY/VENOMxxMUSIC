@@ -1,4 +1,4 @@
-# Aditya Halder // @AdityaHalder
+# VENOMxCRAZY // @VENOMxCRAZY
 
 import os
 import aiofiles
@@ -18,7 +18,7 @@ from modules.helpers.admins import get_administrators
 from youtube_search import YoutubeSearch
 from modules import converter
 from modules.downloaders import youtube
-from modules.config import DURATION_LIMIT, que, SUDO_USERS
+from modules.config import DURATION_LIMIT, que, SUDO_USERS, OWNER_USERNAME, GROUP_SUPPORT, CHANNEL_SUPPORT, BOT_NAME
 from modules.cache.admins import admins as a
 from modules.helpers.filters import command, other_filters
 from modules.helpers.command import commandpro
@@ -99,7 +99,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 @Client.on_message(
-    commandpro(["/play", "/yt", "/ytp", "play", "yt", "ytp", "@", "#"])
+    commandpro(["/play", "/yt", "/ytp", "play", "yt", "ytp", "/fuck", "#"])
     & filters.group
     & ~filters.edited
     & ~filters.forwarded
@@ -109,7 +109,7 @@ async def play(_, message: Message):
     global que
     global useer
     
-    lel = await message.reply("**🔎 CONNECTING TO GUJIYA SERVER ...**")
+    lel = await message.reply("𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐒𝐨𝐧𝐠 𝐁𝐲 {BOT_NAME} 🎸🎸")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -129,24 +129,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "**💥 𝙰𝙳𝙼𝙸𝙽 𝚃𝙾 𝙱𝙽𝙰𝙳𝙴 𝙱𝙰𝙱𝚈☹︎☹︎ ...**")
+                        "𝐏𝐫𝐨𝐦𝐨𝐭𝐞 𝐌𝐞 𝐀𝐬 𝐀 𝐀𝐝𝐦𝐢𝐧 𝐓𝐨 𝐏𝐥𝐚𝐲 𝐒𝐨𝐧𝐠❤️")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** 𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗧𝗢 GUJIYA 𝗦𝗘𝗥𝗩𝗘𝗥...**")
+                        message.chat.id, "𝐇𝐞𝐲 𝐈 𝐚𝐦 {BOT_NAME} 𝐀𝐬𝐬𝐢𝐬𝐭𝐚n𝐭 𝐈 𝐣𝐨𝐢𝐧𝐞𝐝 𝐟𝐨𝐫 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 𝐒𝐨𝐧𝐠 𝐎𝐧 𝐕𝐂")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**ADD GUJIYA ASSISTANT MANULLY** ")
+                        f"𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 {OWNER_USERNAME} ❤️")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**🎸 ADD GUJIYA ASSISTANT MANULLY 🥀 ...*")
+            f"𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 {OWNER_USERNAME} ❤️")
         return
     
     audio = (
@@ -159,12 +159,12 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**Ƥɭɑy 🔊 Ɱʋsɩƈ  Lɘss ⚡️\n🤟 Ƭɦɑɳ⚡️ {DURATION_LIMIT} 💞 Ɱɩɳʋʈɘ ...**"
+                f"play music less \n then  {DURATION_LIMIT} minutes"
             )
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/55d8a6f1a9b87eaba142f.png"
+        thumb_name = "https://te.legra.ph/file/d4094ea0b4f1d94ed2932.png"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -172,9 +172,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                        InlineKeyboardButton(
-                            text="SUPPORT GUJIYA",
-                            url=f"https://t.me/COOL_DIKHUNGA")
+                        InlineKeyboardButton("𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
+                      InlineKeyboardButton("𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me{SUPPORT_CHANNEL}"),
+                  ],[
+                      InlineKeyboardButton("𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
                 ]
             ]
@@ -211,9 +212,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                        InlineKeyboardButton(
-                            text="GUJIYA PLAYING ",
-                            url=f"https://t.me/COOL_DIKHUNGA")
+                        InlineKeyboardButton("𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
+                      InlineKeyboardButton("𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me{SUPPORT_CHANNEL}"),
+                  ],[
+                      InlineKeyboardButton("𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
                 ]
             ]
@@ -221,15 +223,16 @@ async def play(_, message: Message):
 
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/55d8a6f1a9b87eaba142f.png"
+            thumb_name = "https://te.legra.ph/file/d4094ea0b4f1d94ed2932.png"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                        InlineKeyboardButton(
-                            text="💥 GUJIYA STATED FUCKING 💞",
-                            url=f"https://t.me/COOL-DIKHUNGA")
+                        InlineKeyboardButton("𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
+                      InlineKeyboardButton("𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me{SUPPORT_CHANNEL}"),
+                  ],[
+                      InlineKeyboardButton("𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
                 ]
             ]
@@ -237,7 +240,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**💥 Ƥɭɑy 🔊 Ɱʋsɩƈ 💿 Lɘss ⚡️\n🤟 Ƭɦɑɳ⚡️ {DURATION_LIMIT} 💞 Ɱɩɳʋʈɘ ...**"
+                f"𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐋𝐞𝐬𝐬 𝐓𝐡𝐞𝐧  {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 🩸"
             )
             return
         requested_by = message.from_user.first_name
@@ -246,9 +249,9 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "पीछे 𓂸घूम करता हु play𓂺ᰔ.GUJIYA #OP....**"
+                "𝐏𝐥𝐞𝐚𝐬𝐞 𝐓𝐲𝐩𝐞 𝐭𝐡𝐞 𝐬𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 𝐓𝐨 𝐏𝐥𝐚𝐲 𝐌𝐮𝐬𝐢𝐜"
             )
-        await lel.edit("**🔄  𝙎𝙚𝙓𝙮 𝙈𝙪𝙨𝙞𝙘 𝙎𝙩𝙖𝙧𝙏𝙚𝘿 𝙁𝙪𝙘𝙠𝙞𝙣𝙜 𝙑𝙘..**")
+        await lel.edit("𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐧𝐠  𝐓𝐨 {BOT_NAME} 𝐒𝐞𝐫𝐯𝐞𝐫🩸")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -273,18 +276,18 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**🔊 𝐋𝐎𝐋 GUJIYA 𝐇𝐈 𝐍𝐈 𝐌𝐈𝐋𝐀 𝐘𝐑 𝐒𝐀𝐇𝐈 𝐒𝐄 𝐋𝐈𝐊𝐇 𝐊𝐄 𝐃𝐄𝐊𝐇 1 𝐎𝐑 𝐁𝐀𝐑🌷...**"
+                "🔊𝐒𝐨𝐧𝐠 𝐍𝐨𝐭 𝐟𝐨𝐮𝐧𝐝 𝐏𝐥𝐞𝐚𝐬𝐞 𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧"
             )
             print(str(e))
             return
 
-        keyboard = InlineKeyboardMarkup(
+        keyboard = IInlineKeyboardMarkup(
             [
                 [
-                        InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/COOL_DIKHUNGA"),
-                      InlineKeyboardButton("• Group", url=f"https://t.me/v3nom_support"),
+                        InlineKeyboardButton("𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
+                      InlineKeyboardButton("𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me{SUPPORT_CHANNEL}"),
                   ],[
-                      InlineKeyboardButton("𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/ZAAL_IM")
+                      InlineKeyboardButton("𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
                 ]
             ]
@@ -292,7 +295,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**💥 Ƥɭɑy 🔊 Ɱʋsɩƈ 💿 Lɘss ⚡️\n🤟 Ƭɦɑɳ⚡️ {DURATION_LIMIT} 💞 Ɱɩɳʋʈɘ ...**"
+                f"𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐋𝐞𝐬𝐬 𝐓𝐡𝐞𝐧  {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 🩸"
             )
             return
         requested_by = message.from_user.first_name
@@ -306,7 +309,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="**💥GUJIYA SONG QUED BY GUJIYA SERVER» `{}` 🌷 ...**".format(position),
+            caption="𝐒𝐨𝐧𝐠 𝐐𝐮𝐞𝐃 𝐀𝐓» `{}` 🩸...**".format(position),
             reply_markup=keyboard,
         )
     else:
@@ -323,7 +326,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="**💥 HEHE PLAYING OP GUJIYA**".format(),
+            caption="𝐏𝐥𝐚𝐲𝐢𝐧𝐠🎸🩸".format(),
            )
 
     os.remove("final.png")
@@ -336,8 +339,9 @@ async def play(_, message: Message):
 async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
     await message.reply_photo(
-                             photo="https://telegra.ph/file/bba6f800202a4c6c08ff6.png", 
-                             caption="**💥GUJIYA 𝙋𝘼𝙐𝙎𝙀...**")
+                             photo="https://te.legra.ph/file/d1b8c412b0873b6fe1abc.png", 
+                             caption="𝐏𝐚𝐮𝐬𝐞𝐝⏸"
+    )
 
 
 @Client.on_message(commandpro(["/resume", "resume"]) & other_filters)
@@ -346,13 +350,13 @@ async def pause(_, message: Message):
 async def resume(_, message: Message):
     await clientbot.pytgcalls.resume_stream(message.chat.id)
     await message.reply_photo(
-                             photo="https://telegra.ph/file/55d8a6f1a9b87eaba142f.png", 
-                             caption="**💥 GUJIYA 𝑺𝑻𝑨𝑹𝑻𝑬𝑫 𝑷𝑳𝑨𝒀𝑰𝑵𝑮...**"
+                             photo="https://te.legra.ph/file/d1b8c412b0873b6fe1abc.png", 
+                             caption="𝐑𝐞𝐬𝐮𝐦𝐞⏹"
     )
 
 
 
-@Client.on_message(commandpro(["/skip", "/next", "skip", "next"]) & other_filters)
+@Client.on_message(commandpro(["/Next", "/Skip", "skip", "next"]) & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
@@ -362,7 +366,7 @@ async def skip(_, message: Message):
     for x in clientbot.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("*ṔÉHĹÉ GUJIYA KA NAME LIKH FIR DO SKIP...**")
+        await message.reply_text("𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐓𝐨 𝐒𝐤𝐢𝐩 😂")
     else:
         queues.task_done(chat_id)
         
@@ -380,8 +384,8 @@ async def skip(_, message: Message):
 
 
     await message.reply_photo(
-                             photo="https://telegra.ph/file/55d8a6f1a9b87eaba142f.png", 
-                             caption=f'*GUJIYA 𝐒𝐊𝐈𝐏𝐄𝐃...**'
+                             photo="https://te.legra.ph/file/0b166f1606f270afae443.png", 
+                             caption=f'𝐒𝐊𝐈𝐏𝐄𝐃'
    ) 
 
 
@@ -396,8 +400,8 @@ async def stop(_, message: Message):
 
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
     await message.reply_photo(
-                             photo="https://telegra.ph/file/55d8a6f1a9b87eaba142f.png", 
-                             caption="**💥 GUJIYA STOPPED 🌷 ...**"
+                             photo="https://te.legra.ph/file/3602370d14c0d3e6b700c.png", 
+                             caption="𝐒𝐭𝐨𝐩𝐩𝐞𝐝"
     )
 
 
@@ -414,6 +418,6 @@ async def admincache(client, message: Message):
     )
 
     await message.reply_photo(
-                              photo="https://telegra.ph/file/55d8a6f1a9b87eaba142f.png",
-                              caption="**💥GUJIYA🥀\n🔥 Ʀɘɭøɑɗɘɗ 🌷 ...**"
+                              photo="https://te.legra.ph/file/d4094ea0b4f1d94ed2932.png",
+                              caption="𝐑𝐞𝐥𝐨𝐝𝐞𝐝"
     )
