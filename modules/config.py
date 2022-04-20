@@ -15,7 +15,7 @@ STRING_SESSION = getenv("STRING_SESSION")
 OWNER_USERNAME = getenv("OWNER_USERNAME")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP")
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL")
-BOT_NAME = getenv("BOT_NAME")
+
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
 SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1282754256").split()))
 aiohttpsession = aiohttp.ClientSession()
