@@ -18,7 +18,7 @@ from modules.helpers.admins import get_administrators
 from youtube_search import YoutubeSearch
 from modules import converter
 from modules.downloaders import youtube
-from modules.config import DURATION_LIMIT, que, SUDO_USERS, OWNER_USERNAME, SUPPORT_GROUP, SUPPORT_CHANNEL, BOT_NAME
+from modules.config import DURATION_LIMIT, que, SUDO_USERS, OWNER_USERNAME, SUPPORT_GROUP, SUPPORT_CHANNEL
 from modules.cache.admins import admins as a
 from modules.helpers.filters import command, other_filters
 from modules.helpers.command import commandpro
@@ -109,7 +109,7 @@ async def play(_, message: Message):
     global que
     global useer
     
-    lel = await message.reply("𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐒𝐨𝐧𝐠 𝐁𝐲 {BOT_NAME} 🎸🎸")
+    lel = await message.reply("**𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐒𝐨𝐧𝐠 🎸🎸...**")
 
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -129,24 +129,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "𝐏𝐫𝐨𝐦𝐨𝐭𝐞 𝐌𝐞 𝐀𝐬 𝐀 𝐀𝐝𝐦𝐢𝐧 𝐓𝐨 𝐏𝐥𝐚𝐲 𝐒𝐨𝐧𝐠❤️")
+                        "**𝐏𝐫𝐨𝐦𝐨𝐭𝐞 𝐌𝐞 𝐀𝐬 𝐀 𝐀𝐝𝐦𝐢𝐧 𝐓𝐨 𝐏𝐥𝐚𝐲 𝐒𝐨𝐧𝐠❤️...**")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "𝐇𝐞𝐲 𝐈 𝐚𝐦 {BOT_NAME} 𝐀𝐬𝐬𝐢𝐬𝐭𝐚n𝐭 𝐈 𝐣𝐨𝐢𝐧𝐞𝐝 𝐟𝐨𝐫 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 𝐒𝐨𝐧𝐠 𝐎𝐧 𝐕𝐂")
+                        message.chat.id, "**𝐇𝐞𝐲 𝐈 𝐚𝐦 𝐀𝐬𝐬𝐢𝐬𝐭𝐚n𝐭 𝐈 𝐣𝐨𝐢𝐧𝐞𝐝 𝐟𝐨𝐫 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 𝐒𝐨𝐧𝐠 𝐎𝐧 𝐕𝐂...**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 {OWNER_USERNAME} ❤️")
+                        f"**𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 {OWNER_USERNAME}...**")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 {OWNER_USERNAME} ❤️")
+            f"**𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 {OWNER_USERNAME} ❤️...**")
         return
     
     audio = (
@@ -159,7 +159,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"play music less \n then  {DURATION_LIMIT} minutes"
+                f"**play music less \n then  {DURATION_LIMIT} minutes...**"
             )
 
         file_name = get_file_name(audio)
@@ -240,7 +240,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐋𝐞𝐬𝐬 𝐓𝐡𝐞𝐧  {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 🩸"
+                f"**𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐋𝐞𝐬𝐬 𝐓𝐡𝐞𝐧  {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 🩸...**"
             )
             return
         requested_by = message.from_user.first_name
@@ -249,9 +249,9 @@ async def play(_, message: Message):
     else:
         if len(message.command) < 2:
             return await lel.edit(
-                "𝐏𝐥𝐞𝐚𝐬𝐞 𝐓𝐲𝐩𝐞 𝐭𝐡𝐞 𝐬𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 𝐓𝐨 𝐏𝐥𝐚𝐲 𝐌𝐮𝐬𝐢𝐜"
+                "**𝐏𝐥𝐞𝐚𝐬𝐞 𝐓𝐲𝐩𝐞 𝐭𝐡𝐞 𝐬𝐨𝐧𝐠 𝐍𝐚𝐦𝐞 𝐓𝐨 𝐏𝐥𝐚𝐲 𝐌𝐮𝐬i𝐜...**"
             )
-        await lel.edit("𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐧𝐠  𝐓𝐨 {BOT_NAME} 𝐒𝐞𝐫𝐯𝐞𝐫🩸")
+        await lel.edit("**𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐧𝐠  𝐓𝐨  𝐒𝐞𝐫𝐯𝐞𝐫🩸...**")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -276,7 +276,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "🔊𝐒𝐨𝐧𝐠 𝐍𝐨𝐭 𝐟𝐨𝐮𝐧𝐝 𝐏𝐥𝐞𝐚𝐬𝐞 𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧"
+                "**🔊𝐒𝐨𝐧𝐠 𝐍𝐨𝐭 𝐟𝐨𝐮𝐧𝐝 𝐏𝐥𝐞𝐚𝐬𝐞 𝐓𝐫𝐲 𝐀𝐠𝐚𝐢𝐧...**"
             )
             print(str(e))
             return
@@ -295,7 +295,7 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐋𝐞𝐬𝐬 𝐓𝐡𝐞𝐧  {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 🩸"
+                f"**𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐋𝐞𝐬𝐬 𝐓𝐡𝐞𝐧  {DURATION_LIMIT} 𝐌𝐢𝐧𝐮𝐭𝐞𝐬 🩸...**"
             )
             return
         requested_by = message.from_user.first_name
@@ -309,7 +309,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption="𝐒𝐨𝐧𝐠 𝐐𝐮𝐞𝐃 𝐀𝐓» `{}` 🩸...**".format(position),
+            caption="**𝐒𝐨𝐧𝐠 𝐐𝐮𝐞𝐃 𝐀𝐓» `{}` 🩸...**".format(position),
             reply_markup=keyboard,
         )
     else:
@@ -326,7 +326,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="*.𝐏𝐥𝐚𝐲𝐢𝐧𝐠🎸*".format(),
+            caption="**𝐏𝐥𝐚𝐲𝐢𝐧𝐠🎸**".format(),
            )
 
     os.remove("final.png")
@@ -340,7 +340,7 @@ async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
     await message.reply_photo(
                              photo="https://te.legra.ph/file/d1b8c412b0873b6fe1abc.png", 
-                             caption="𝐏𝐚𝐮𝐬𝐞𝐝⏸"
+                             caption="**𝐏𝐚𝐮𝐬𝐞𝐝⏸...**"
     )
 
 
@@ -351,7 +351,7 @@ async def resume(_, message: Message):
     await clientbot.pytgcalls.resume_stream(message.chat.id)
     await message.reply_photo(
                              photo="https://te.legra.ph/file/d1b8c412b0873b6fe1abc.png", 
-                             caption="𝐑𝐞𝐬𝐮𝐦𝐞⏹"
+                             caption="**𝐑𝐞𝐬𝐮𝐦𝐞⏹...**"
     )
 
 
@@ -366,7 +366,7 @@ async def skip(_, message: Message):
     for x in clientbot.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐓𝐨 𝐒𝐤𝐢𝐩 😂")
+        await message.reply_text("**𝐏𝐥𝐚𝐲 𝐓𝐡𝐞 𝐒𝐨𝐧𝐠 𝐓𝐨 𝐒𝐤𝐢𝐩 😂...**")
     else:
         queues.task_done(chat_id)
         
@@ -385,7 +385,7 @@ async def skip(_, message: Message):
 
     await message.reply_photo(
                              photo="https://te.legra.ph/file/0b166f1606f270afae443.png", 
-                             caption=f'𝐒𝐊𝐈𝐏𝐄𝐃'
+                             caption=f'**𝐒𝐊𝐈𝐏𝐄𝐃...**'
    ) 
 
 
@@ -401,7 +401,7 @@ async def stop(_, message: Message):
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
     await message.reply_photo(
                              photo="https://te.legra.ph/file/3602370d14c0d3e6b700c.png", 
-                             caption="𝐒𝐭𝐨𝐩𝐩𝐞𝐝"
+                             caption="**𝐒𝐭𝐨𝐩𝐩𝐞𝐝...**"
     )
 
 
@@ -419,5 +419,5 @@ async def admincache(client, message: Message):
 
     await message.reply_photo(
                               photo="https://te.legra.ph/file/d4094ea0b4f1d94ed2932.png",
-                              caption="𝐑𝐞𝐥𝐨𝐝𝐞𝐝"
+                              caption="**𝐑𝐞𝐥𝐨𝐝𝐞𝐝....**"
     )
