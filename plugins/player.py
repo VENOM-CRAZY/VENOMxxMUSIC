@@ -141,12 +141,12 @@ async def play(_, message: Message):
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 @VENOMxCRAZY...**")
+                        f"**𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 {OWNER_USERNAME}...**")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 @VENOMxCRAZY ❤️...**")
+            f"**𝐏𝐥𝐞𝐚𝐬𝐞 𝐀𝐝𝐝 𝐌𝐲 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 𝐦𝐚𝐧𝐮𝐥𝐥𝐲 𝐨𝐫 𝐜𝐨𝐧𝐭𝐚𝐜𝐭 𝐦𝐲 𝐎𝐰𝐧𝐞𝐫 @{OWNER_USERNAME} ❤️...**")
         return
     
     audio = (
@@ -172,10 +172,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                        InlineKeyboardButton(text="𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/gujiya_garam"),
-                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me/s3d_op"),
+                        InlineKeyboardButton(text="𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
+                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me/{SUPPORT_CHANNEL}"),
                   ],[
-                      InlineKeyboardButton(text="𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/VENOMxCRAZY")
+                      InlineKeyboardButton(text="𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
                 ]
             ]
@@ -212,8 +212,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                        InlineKeyboardButton(text="𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/Gujiya_Garam"),
-                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me/s3d_op"),
+                        InlineKeyboardButton(text="𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
+                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me/{SUPPORT_CHANNEL"),
                   ],[
                       InlineKeyboardButton(text="𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
@@ -230,7 +230,7 @@ async def play(_, message: Message):
             [
                 [
                         InlineKeyboardButton(text="𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
-                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me{SUPPORT_CHANNEL}"),
+                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me/{SUPPO_CHANNEL}"),
                   ],[
                       InlineKeyboardButton(text="𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
@@ -285,7 +285,7 @@ async def play(_, message: Message):
             [
                 [
                         InlineKeyboardButton(text="𝐆 𝐑 𝐎 𝐔 𝐏", url=f"https://t.me/{SUPPORT_GROUP}"),
-                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me{SUPPORT_CHANNEL}"),
+                      InlineKeyboardButton(text="𝐂 𝐇 𝐀 𝐍 𝐍 𝐄 𝐋", url=f"https://t.me/{SUPPORT_CHANNEL}"),
                   ],[
                       InlineKeyboardButton(text="𝐎 𝐖 𝐍 𝐄 𝐑", url=f"https://t.me/{OWNER_USERNAME}")
 
